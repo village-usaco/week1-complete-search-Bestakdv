@@ -6,10 +6,10 @@ public class MilkPail
   public int pails(int X, int Y, int M)
   {
     int max = 0;
-    if(max > X && max > Y)
+    if(M > X && M > Y)
       return max;
 
-    int amount = M % X;
+    int amount = M / X;
     if(amount != M)
     {
       for(int i = 0; i < amount; i++)
@@ -18,7 +18,7 @@ public class MilkPail
       }
     }
     int otherMax = max;
-    int otherAmount = M % Y;
+    int otherAmount = M / Y;
     if(otherAmount != M)
     {
       for(int i = 0; i < otherAmount; i++)
