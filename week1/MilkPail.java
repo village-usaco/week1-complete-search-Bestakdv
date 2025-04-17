@@ -1,5 +1,6 @@
 package usaco;
 
+import java.util.*;
 public class MilkPail
 {
 
@@ -22,8 +23,6 @@ public class MilkPail
     int otherAmount = M % Y;
     if(otherAmount != M)
     {
-
-    
       for(int i=0; i<otherAmount; i++)
       {
         max+=Y;
@@ -33,6 +32,10 @@ public class MilkPail
   }
   public static void main(String[] args)
   {
-    pails(17,25,77);
+    Scanner kb = new Scanner(System.in);
+    int X = kb.nextInt();
+    int Y = kb.nextInt();
+    int M = kb.nextInt();
+    pails(X,Y,M);
   }
 }
