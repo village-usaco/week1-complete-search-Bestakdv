@@ -11,7 +11,7 @@ public class MilkPail
       for (int j=0; j<= M / Y; j++)
       {
         int count = i * X + j * Y;
-        if (total <= M)
+        if (count <= M)
         {
           max = Math.max(max, count);
         }
