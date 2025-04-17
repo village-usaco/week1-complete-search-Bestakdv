@@ -4,7 +4,7 @@ import java.util.*;
 public class MilkPail
 {
 
-  public int pails(int X, int Y, int M)
+  public static int pails(int X, int Y, int M)
   {
     int max = 0;
     if(max > X && max > Y)
