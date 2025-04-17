@@ -4,7 +4,7 @@ import java.util.*;
 public class MilkPail
 {
 
-  public static int pails(int X, int Y, int M)
+  public int pails(int X, int Y, int M)
   {
     int max = 0;
     if(max > X && max > Y)
@@ -36,6 +36,7 @@ public class MilkPail
     int X = kb.nextInt();
     int Y = kb.nextInt();
     int M = kb.nextInt();
-    pails(X,Y,M);
+    MilkPail test = new MilkPail();
+    int result = test.pails(X,Y,M);
   }
 }
