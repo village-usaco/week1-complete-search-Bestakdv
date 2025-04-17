@@ -1,47 +1,51 @@
 package usaco;
 
-import java.util.*;
+import java.io.*;
+
 public class MilkPail
 {
 
   public int pails(int X, int Y, int M)
   {
     int max = 0;
-    if(max > X && max > Y)
+    if(M > X && M > Y)
       return max;
 
     int amount = M % X;
     if(amount != M)
     {
-      for(int i=0; i<amount;i++)
+      for(int i = 0; i < amount; i++)
       {
-        max+=X;
+        max += X;
       }
     }
     int otherMax = max;
     int otherAmount = M % Y;
     if(otherAmount != M)
     {
-      for(int i=0; i<otherAmount; i++)
+      for(int i = 0; i < otherAmount; i++)
       {
-        max+=Y;
+        max += Y;
       }
     }
     return max;
   }
 
-  public static void main(String[] args)
+  public static void main(String[] args) throws IOException
   {
-    Scanner kb = new Scanner(System.in);
-    System.out.print("Enter X: ");
-    int X = kb.nextInt();
-    System.out.print("Enter Y: ");
-    int Y = kb.nextInt();
-    System.out.print("Enter M: ");
-    int M = kb.nextInt();
-    
+    BufferedReader br = new BufferedReader(new FileReader("milkpail.in"));
+    BufferedWriter bw = new BufferedWriter(new FileWriter("milkpail.out"));
+
+    String[] tokens = br.readLine().split(" ");
+    int X = Integer.parseInt(tokens[0]);
+    int Y = Integer.parseInt(tokens[1]);
+    int M = Integer.parseInt(tokens[2]);
+
     MilkPail test = new MilkPail();
-    int result = test.pails(X,Y,M);
-    System.out.println("Output: " + result);
+    int result = test.pails(X, Y, M);
+
+    bw.write(result + "\n");
+    bw.close();
+    br.close();
   }
 }
