@@ -1,5 +1,3 @@
-package usaco;
-
 import java.io.*;
 
 public class MilkPail
@@ -8,7 +6,7 @@ public class MilkPail
   public int pails(int X, int Y, int M)
   {
     int max = 0;
-    if(M > X && M > Y)
+    if(max > X && max > Y)
       return max;
 
     int amount = M % X;
@@ -33,8 +31,8 @@ public class MilkPail
 
   public static void main(String[] args) throws IOException
   {
-    BufferedReader br = new BufferedReader(new FileReader("milkpail.in"));
-    BufferedWriter bw = new BufferedWriter(new FileWriter("milkpail.out"));
+    BufferedReader br = new BufferedReader(new FileReader("pails.in"));
+    BufferedWriter bw = new BufferedWriter(new FileWriter("pails.out"));
 
     String[] tokens = br.readLine().split(" ");
     int X = Integer.parseInt(tokens[0]);
