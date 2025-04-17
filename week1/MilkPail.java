@@ -6,24 +6,15 @@ public class MilkPail
   public int pails(int X, int Y, int M)
   {
     int max = 0;
-    if(M > X && M > Y)
-      return max;
-
-    int amount = M / X;
-    if(amount != M)
+    for(int i=0; i<= M / X; i++) 
     {
-      for(int i = 0; i < amount; i++)
+      for (int j=0; j<= M / Y; j++)
       {
-        max += X;
-      }
-    }
-    int otherMax = max;
-    int otherAmount = M / Y;
-    if(otherAmount != M)
-    {
-      for(int i = 0; i < otherAmount; i++)
-      {
-        max += Y;
+        int count = i * X + j * Y;
+        if (total <= M)
+        {
+          max = Math.max(max, count);
+        }
       }
     }
     return max;
